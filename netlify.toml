@@ -1,0 +1,15 @@
+# netlify.toml
+
+# Configuración de Build
+[build]
+  # Directorio donde Netlify buscará tus funciones serverless
+  functions = "netlify/functions"
+
+# Reglas de redirección. Esto es lo más importante.
+[[redirects]]
+  # Redirige cualquier petición que comience con /api/
+  from = "/api/*"
+  # Hacia nuestra función llamada "api"
+  to = "/.netlify/functions/api/:splat"
+  # Devuelve un código de estado 200 (OK), como si fuera un proxy
+  status = 200
