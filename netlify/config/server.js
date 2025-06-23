@@ -40,7 +40,7 @@ SERVER.use(cors(corsOptions))
 SERVER.use('/api/', userRouter)
 
 // Middleware de errores
-SERVER.use((err, req, res, next) => {
+SERVER.use((err, _req, res, _next) => {
   const status = err.status || 500
   const message = err.message || err
   console.error('Error middleware: ', message)

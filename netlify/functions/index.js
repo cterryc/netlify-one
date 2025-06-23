@@ -37,7 +37,8 @@ export const handler = async (event, context) => {
     try {
       // Verificar si es JSON válido
       JSON.parse(event.body)
-    } catch (e) {
+    } catch (error) {
+      console.log('Error cath:', error)
       console.log('Body no es JSON válido:', event.body)
     }
   }
